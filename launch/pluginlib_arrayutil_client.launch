@@ -1,0 +1,4 @@
+<launch>
+  <node name="pluginlib_arrayutil_client" pkg="pluginlib_arrayutil_client" type="pluginlib_client"
+   output="screen" />
+</launch>
