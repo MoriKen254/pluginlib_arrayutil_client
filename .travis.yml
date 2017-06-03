@@ -1,0 +1,26 @@
+# This config file for Travis CI utilizes ros-industrial/industrial_ci package.		
+# For more info for the package, see https://github.com/ros-industrial/industrial_ci/blob/master/README.rst		
+sudo: required 		
+dist: trusty 		
+services:		
+  - docker		
+language: generic 		
+compiler:		
+  - gcc		
+notifications:		
+  email:		
+    on_success: change		
+    on_failue: always		
+env:		
+  global:		
+    - CATKIN_PARALLEL_TEST_JOBS=-p1		
+    - ROS_PARALLEL_TEST_JOBS=-j1		
+  matrix:		
+    - ROS_DISTRO="indigo"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu UPSTREAM_WORKSPACE=file ROSINSTALL_FILENAME=.depend.rosinstall BEFORE_SCRIPT='./.before.sh'		
+    - ROS_DISTRO="indigo"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu UPSTREAM_WORKSPACE=file ROSINSTALL_FILENAME=.depend.rosinstall BEFORE_SCRIPT='./.before.sh'		
+    - ROS_DISTRO="kinetic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu UPSTREAM_WORKSPACE=file ROSINSTALL_FILENAME=.depend.rosinstall BEFORE_SCRIPT='./.before.sh'		
+    - ROS_DISTRO="kinetic"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros-shadow-fixed/ubuntu UPSTREAM_WORKSPACE=file ROSINSTALL_FILENAME=.depend.rosinstall BEFORE_SCRIPT='./.before.sh'		
+install:		
+  - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config		
+script:		
+  - source .ci_config/travis.sh 
