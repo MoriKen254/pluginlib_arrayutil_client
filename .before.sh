@@ -1,3 +1,3 @@
 #!/bin/bash
 
-catkin build
+sudo catkin build
