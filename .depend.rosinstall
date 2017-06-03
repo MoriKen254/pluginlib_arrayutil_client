@@ -1,0 +1,4 @@
+- git:
+    local-name: pluginlib_arrayutil
+    uri: https://github.com/MoriKen254/pluginlib_arrayutil.git
+    version: master
