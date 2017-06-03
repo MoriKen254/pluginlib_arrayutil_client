@@ -2,8 +2,10 @@
 
 pwd
 ls
-cd ../../
+cd ../../catkin_ws/src
+pwd
+ls
 sudo catkin build
 ls
-cd src/pluginlib_arrayutil_client
+cd /root/src/pluginlib_arrayutil_client
 pwd
