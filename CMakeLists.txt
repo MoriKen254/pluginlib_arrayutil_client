@@ -2,14 +2,13 @@ cmake_minimum_required(VERSION 2.8.3)
 project(pluginlib_arrayutil_client)
 
 find_package(catkin REQUIRED COMPONENTS
-  #find_package(catkin COMPONENTS
   pluginlib
   roscpp
   pluginlib_arrayutil
 )
 
 catkin_package(
-  LIBRARIES pluginlib_arrayutil_client
+  LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS pluginlib roscpp
 )
 
@@ -18,6 +17,6 @@ include_directories(
 )
 
 # Declare a C++ executable
-add_executable(pluginlib_client src/plugin_client.cpp)
-target_link_libraries(pluginlib_client ${catkin_LIBRARIES})
+add_executable(client_node src/client_node.cpp src/pluginlib_arrayutil_client.cpp)
+target_link_libraries(client_node ${catkin_LIBRARIES})
 
