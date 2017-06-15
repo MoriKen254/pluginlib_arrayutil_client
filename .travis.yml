@@ -17,8 +17,8 @@ env:
     - ROS_PARALLEL_TEST_JOBS=-j1		
     - UPSTREAM_WORKSPACE=file
     - ROSINSTALL_FILENAME=.depend.rosinstall
-    - BEFORE_SCRIPT = ’./pre_process.sh’
-    - AFTER_SCRIPT = ’./post_process.sh’
+    - BEFORE_SCRIPT='./pre_process.sh'
+    - AFTER_SCRIPT='./post_process.sh'
   matrix:		
     - ROS_DISTRO="indigo"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu 
     - ROS_DISTRO="jade"  ROS_REPOSITORY_PATH=http://packages.ros.org/ros/ubuntu 
